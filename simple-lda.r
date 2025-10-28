@@ -40,7 +40,7 @@ additional_stop_words <- c("n't", "not", "just", "also", "did", "still", "one", 
 # 3b: preprocess again
 reviews_clean <- reviews %>%
   select(Review) %>%
-  mutate(Review = tolower(Review)) %>%.    # Convert text to lowercase
+  mutate(Review = tolower(Review)) %>%     # Convert text to lowercase
   unnest_tokens(word, Review) %>%          # Tokenize the text into individual words
   filter(!word %in% additional_stop_words) # Remove additional common words
 
